@@ -1,0 +1,14 @@
+.dp {
+  height: 50px;
+  width: 50x;
+  border-radius: 50px;
+}
+.name {
+  height: 14px;
+  color: grey;
+}
+.name_box {
+  padding-left: 4px;
+  margin-top: 2px;
+  width: 100px;
+}
