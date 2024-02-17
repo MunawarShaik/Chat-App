@@ -5,10 +5,15 @@
 }
 .name {
   height: 14px;
-  color: grey;
+  color: rgb(239, 227, 227);
 }
 .name_box {
   padding-left: 4px;
   margin-top: 2px;
   width: 100px;
+}
+.input {
+  width: 75%;
+  height: 30px;
+  color: black;
 }

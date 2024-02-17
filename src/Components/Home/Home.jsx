@@ -1,8 +1,9 @@
 import React from "react";
 import Container from "@mui/material/Container";
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import dp from "../../assets/dp.jpg";
 import "./index.css";
+import SendIcon from "@mui/icons-material/Send";
 
 const Home = () => {
   const users = [
@@ -108,24 +109,38 @@ const Home = () => {
       <Box
         sx={{
           margin: "2px",
-          height: "100vh",
-          width: "50%",
-          border: "solid",
-          borderColor: "black",
+          height: "100",
+          width: "75%",
+          bgcolor: "white",
         }}
       >
-        <h1>Center</h1>
-      </Box>
-      <Box
-        sx={{
-          margin: "2px",
-          height: "100vh",
-          width: "25%",
-          border: "solid",
-          borderColor: "black",
-        }}
-      >
-        <h1>Right</h1>
+        <Box
+          sx={{
+            width: "70",
+            height: "80px",
+            borderRadius: "6px",
+            bgcolor: "blue",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "flex-start",
+            alignItems: "flex-start",
+            m: "8px",
+            pt: "10px",
+          }}
+        >
+          <img src={dp} alt="dp" className="dp" />
+          <h3 className="name">name</h3>
+        </Box>
+
+        <Box sx={{ height: "100vh", bgcolor: "white" }}>
+          <h3 className="heading"> Chat</h3>
+        </Box>
+        <Box sx={{ width: "100%", bgcolor: "white" }}>
+          <input className="input" placeholder="Type Message" type="text" />
+          <Button type="button">
+            <SendIcon />
+          </Button>
+        </Box>
       </Box>
     </Container>
   );
