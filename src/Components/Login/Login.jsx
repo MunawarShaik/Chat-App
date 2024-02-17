@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Login = ({ isLoginPage = false }) => {
-  const [username, setUsername] = useState("");
+  const [fullName, setfullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -11,8 +11,8 @@ const Login = ({ isLoginPage = false }) => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log(username, password);
-    localStorage.setItem("username", username);
+    console.log(fullName, password);
+    localStorage.setItem("fullName", fullName);
     localStorage.setItem("password", password);
     navigate("/home");
   };
@@ -58,10 +58,10 @@ const Login = ({ isLoginPage = false }) => {
                 name="name"
                 type="text"
                 variant="outlined"
-                autoComplete={username}
+                autoComplete={fullName}
                 required
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                value={fullName}
+                onChange={(e) => setfullName(e.target.value)}
               />
             </label>
           )}
@@ -106,7 +106,13 @@ const Login = ({ isLoginPage = false }) => {
             {isLoginPage
               ? "Didn't have an account?"
               : "Alredy have an account?"}
-            <span>{isLoginPage ? "Sign up" : "Login"}</span>
+            <Button
+              onClick={() =>
+                navigate(`/users/${isLoginPage ? "signup" : "login"}`)
+              }
+            >
+              {isLoginPage ? "Sign up" : "Login"}{" "}
+            </Button>
           </div>
         </Box>
       </Box>
